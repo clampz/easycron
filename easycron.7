@@ -1,0 +1,49 @@
+.\" Manpage for easycron.
+.\" Contact david@weinman.com to correct errors or typos.
+.TH man 7 "18 May 2013" "1.0" "easycron"
+.SH NAME
+easycron \- create and edit processes in the crontab
+.SH SYNOPSIS
+.B easycron
+[\fB\-d\fR \fIPROCESS\fR] [\fB\-l\fR] [\fBTIME_INTERVALS\fR] [\fBPROCESS\fR]
+.SH DESCRIPTION
+.B easycron
+is a simple script to manage the user's crontab.
+.SH USAGE
+Easycron's main usage is to add processes to the user's crontab without having to know the format that crontab accepts i.e: easycron 30min './example.sh' adds the ./example.sh process to the crontab to run every 30 min. In other words, every field other than the ones you specify are set to *. Easycron takes 5 different suffixes for specifying the times in which you want to add the process listed below.
+.RS
+\- *
+.B min 
+specifies the minute (0-59)
+.RE
+.RS
+\- *
+.B hr 
+specifies the hour (0-23)
+.RE
+.RS
+\- *
+.B d 
+specifies the day of the month (1-31)
+.RE
+.RS
+\- *
+.B mo 
+specifies the month of the year (1-12)
+.RE
+.RS
+\- *
+.B dow 
+specifies the day of the week (0-6), where 0 is sunday
+.RE
+.SH OPTIONS
+-l prints the current crontab
+.P
+-d deletes any crontab entry with the given string in it, usage: easycron -d 'process_to_delete'
+.SH SEE ALSO
+crontab(1), cron(8)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+David Weinman (david@weinman.com)
+
