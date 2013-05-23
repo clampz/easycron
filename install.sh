@@ -6,15 +6,7 @@ else
   mkdir ~/bin
 fi
 
-#mkdir ~/bin
-
 mv easycron.sh ~/bin/
-
-#if [[ `uname` == 'Linux' ]]; then
-#  cat ~/.bashrc > my_bash_profile
-#fi
-#OS X below
-#cat ~/.bash_profile > my_bash_profile
 
 if ! grep -q 'PATH=$PATH:$HOME/bin' "$HOME/.bash_profile"; then
   echo 'if [ -d $HOME/bin ]; then
@@ -31,11 +23,6 @@ elif [[ `uname` == 'Darwin' ]]; then
     echo "alias easycron='easycron.sh'" >> ~/.bash_profile
   fi
 fi
-
-#OS X below
-#cp my_bash_profile ~/.bash_profile
-
-#cat ~/.bash_profile
 
 mv easycron.7 /usr/share/man/man7/
 
