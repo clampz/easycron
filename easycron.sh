@@ -11,10 +11,8 @@ dow="*"
 if [ "$1" == "-d" ]; then
   sed "/$2/d" mycron.txt > tmp && mv tmp mycron.txt
   crontab mycron.txt
-  rm mycron.txt
 elif [ "$1" == "-l" ]; then
   cat mycron.txt
-  rm mycron.txt
 else
   for arg in "$@"
   do
@@ -28,7 +26,7 @@ else
   done
   echo "$min $hour $dom $mon $dow ${@: -1}" >> mycron.txt
   crontab mycron.txt
-  rm mycron.txt
 fi
 
+rm mycron.txt
 
