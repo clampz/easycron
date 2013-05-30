@@ -13,7 +13,7 @@ if ! grep -q 'PATH=$PATH:$HOME/bin' "$HOME/.bash_profile"; then
   PATH=$PATH:$HOME/bin
 fi' >> ~/.bash_profile
 fi
-#havent figured out how to and these two 4 ifs into 2 yet
+#havent figured out how to and these 4 ifs into 2 yet
 if [[ `uname` == 'Linux' ]]; then
   if ! grep -q 'alias easycron' "$HOME/.bashrc"; then
     echo "alias easycron='easycron.sh'" >> ~/.bashrc
