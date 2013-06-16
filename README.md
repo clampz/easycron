@@ -10,5 +10,5 @@ Usage: ```easycron 30min './example.sh'``` adds the ```./example.sh``` process t
 
 to install, run: 
 ```
-sudo ./install.sh
+sudo ./INSTALL
 ```

@@ -6,7 +6,7 @@ else
   mkdir ~/bin
 fi
 
-mv easycron.sh ~/bin/
+cp src/easycron.sh ~/bin/
 
 if ! grep -q 'PATH=$PATH:$HOME/bin' "$HOME/.bash_profile"; then
   echo 'if [ -d $HOME/bin ]; then
@@ -24,5 +24,5 @@ elif [[ `uname` == 'Darwin' ]]; then
   fi
 fi
 
-mv easycron.7 /usr/share/man/man7/
+cp src/easycron.7 /usr/share/man/man7/
 
