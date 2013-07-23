@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# easycron.sh by David Weinman <david@weinman.com>
+#
+# This file is licensed under the Do what the fuck you want to Public License
+# (DWTFYWTPL).  See LICENSE for details.
+
 crontab -l > mycron.txt
 
 min="*"
