@@ -5,6 +5,11 @@
 # This file is licensed under the Do what the fuck you want to Public License
 # (DWTFYWTPL).  See LICENSE for details.
 
+if [ -z "$1" ]; then
+  echo "Usage: $0 <time interval> <executable file OR bash code>"
+  exit
+fi
+
 crontab -l > mycron.txt
 
 min="*"
