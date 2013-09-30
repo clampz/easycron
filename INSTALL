@@ -11,7 +11,7 @@ else
   mkdir ~/bin
 fi
 
-cp src/easycron.sh ~/bin/
+cp src/easycron ~/bin/
 
 if ! grep -q 'PATH=$PATH:$HOME/bin' "$HOME/.bash_profile"; then
   echo 'if [ -d $HOME/bin ]; then
@@ -21,11 +21,11 @@ fi
 #havent figured out how to and these 4 ifs into 2 yet
 if [[ `uname` == 'Linux' ]]; then
   if ! grep -q 'alias easycron' "$HOME/.bashrc"; then
-    echo "alias easycron='easycron.sh'" >> ~/.bashrc
+    echo "alias easycron='easycron'" >> ~/.bashrc
   fi
 elif [[ `uname` == 'Darwin' ]]; then
   if ! grep -q 'alias easycron' "$HOME/.bash_profile"; then
-    echo "alias easycron='easycron.sh'" >> ~/.bash_profile
+    echo "alias easycron='easycron'" >> ~/.bash_profile
   fi
 fi
 
