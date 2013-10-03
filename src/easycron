@@ -5,24 +5,32 @@
 # This file is licensed under the Do what the fuck you want to Public License
 # (DWTFYWTPL).  See LICENSE for details.
 
+#if there's no args, print usage
 if [ -z "$1" ]; then
   echo "Usage: $0 <time interval> <executable file OR bash code>"
   exit
 fi
 
+#copy the current cron table
 crontab -l > mycron.txt
 
+# initialize time specifications to wild card
 min="*"
 hour="*"
 dom="*"
 mon="*"
 dow="*"
 
+# if the first arg is delete option, then look for a pattern to delete.
 if [ "$1" == "-d" ]; then
   sed "/$2/d" mycron.txt > tmp && mv tmp mycron.txt
   crontab mycron.txt
+
+# if the first arg is a list option, then cat the cron table
 elif [ "$1" == "-l" ]; then
   cat mycron.txt
+
+# else it must be a process with some number of time specification
 else
   for arg in "$@"
   do
@@ -38,5 +46,6 @@ else
   crontab mycron.txt
 fi
 
+# remove my copy of the cron table
 rm mycron.txt
 
