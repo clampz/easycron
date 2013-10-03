@@ -5,19 +5,24 @@
 # This file is licensed under the Do what the fuck you want to Public License
 # (DWTFYWTPL).  See LICENSE for details.
 
+# if there's no bin file in HOME, make one.
 if [ -d ~/bin ]; then
   : 
 else
   mkdir ~/bin
 fi
 
+# copy the script to it
 cp src/easycron ~/bin/
 
+# if the bin file isn't in the path, then write it to the path
 if ! grep -q 'PATH=$PATH:$HOME/bin' "$HOME/.bash_profile"; then
   echo 'if [ -d $HOME/bin ]; then
   PATH=$PATH:$HOME/bin
 fi' >> ~/.bash_profile
 fi
+
+#if there's no alias in the bashrc, write it to the bashrc
 #havent figured out how to and these 4 ifs into 2 yet
 if [[ `uname` == 'Linux' ]]; then
   if ! grep -q 'alias easycron' "$HOME/.bashrc"; then
@@ -29,5 +34,6 @@ elif [[ `uname` == 'Darwin' ]]; then
   fi
 fi
 
+#copy the man page to the man file
 cp src/easycron.7 /usr/share/man/man7/
 
