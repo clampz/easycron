@@ -12,8 +12,9 @@ Options:
 * -l **concatinates the crontab file to the command line.**
 
 To install easycron to your path using the INSTALL script, run: 
-
 ```
 sudo ./INSTALL
 ```
+
+the INSTALL script only supports OS X and debian like distros of Linux.
 

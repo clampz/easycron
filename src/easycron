@@ -35,6 +35,7 @@ else
   for arg in "$@"
   do
     case $arg in
+      
       *min ) min="${arg%min}";;
       *hr ) hour="${arg%%hr}";;
       *d ) dom="${arg%%d}";;
@@ -45,6 +46,10 @@ else
   echo "$min $hour $dom $mon $dow ${@: -1}" >> mycron.txt
   crontab mycron.txt
 fi
+
+# some examples of cool usage might be:
+# easycron "every other monday at noon" /path/to/exec
+# easycron "every other monday at noon and every thursday at 1p" /path/to/exec
 
 # remove my copy of the cron table
 rm mycron.txt
