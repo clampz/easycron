@@ -10,7 +10,7 @@ easycron \- create and edit processes in the crontab
 .B easycron
 is a simple script to manage the user's crontab.
 .SH USAGE
-Easycron's main usage is to add processes to the user's crontab without having to know the format that crontab accepts i.e: easycron 30min './example.sh' adds the ./example.sh process to the crontab to run every 30 min. In other words, every field other than the ones you specify are set to *. Easycron takes 5 different suffixes for specifying the times in which you want to add the process listed below.
+Easycron's main usage is to add processes to the user's crontab without having to know the format that crontab accepts i.e: easycron 30min '/path/to/example.sh' adds the /path/to/example.sh executable to the crontab to run every 30 min. Wildcard is *, just like the crontab's syntax. Easycron takes 5 different suffixes for specifying the times in which you want to add the process listed below. 
 .RS
 \- *
 .B min 

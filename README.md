@@ -11,10 +11,8 @@ Options:
 * -d **delete option takes a search term and deletes the line where it finds the term. usage:** ```easycron -d 'process_to_delete'```
 * -l **concatinates the crontab file to the command line.**
 
-To install easycron to your path using the INSTALL script, run: 
+To install easycron, use the following command (while inside the downloaded repo file): 
 ```
-sudo ./INSTALL
+make install
 ```
-
-the INSTALL script only supports OS X and debian like distros of Linux.
 
