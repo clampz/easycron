@@ -39,11 +39,11 @@ else
       "every odd day" ) min="00"; hour="00"; dom="1-31/2";;
       "every even day" ) min="00"; hour="00"; dom="1-30/2";;
       *midnight ) min="00"; hour="00";; 
-      *min ) min="${arg%min}";;
-      *hr ) hour="${arg%%hr}";;
-      *d ) dom="${arg%%d}";;
-      *mo ) mon="${arg%%mo}";;
-      *dow ) dow="${arg%%dow}";;
+      *min ) min="*/${arg%min}";;
+      *hr ) hour="*/${arg%%hr}";;
+      *d ) dom="*/${arg%%d}";;
+      *mo ) mon="*/${arg%%mo}";;
+      *dow ) dow="*/${arg%%dow}";;
     esac
   done
   echo "$min $hour $dom $mon $dow ${@: -1}" >> mycron.txt
