@@ -1,13 +1,14 @@
 
 INSTALLDIR=/usr/sbin
+MANDIR=/usr/share/man/man7
 
 all: install
 
 install:
-	cp ./src/easycron $(INSTALLDIR)/
-	cp ./src/easycron.7 /usr/share/man/man7/
+	chmod +x ./src/easycron; cp ./src/easycron $(INSTALLDIR)/ 
+	cp ./src/easycron.7 $(MANDIR)/
 
 remove:
 	rm $(INSTALLDIR)/easycron
-	rm /usr/share/man/man7/easycron.7
+	rm $(MANDIR)/easycron.7
 
